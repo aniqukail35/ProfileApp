@@ -1,0 +1,138 @@
+<html>
+<head>
+    <title>Personal Profile Form</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+
+
+   <style>
+        body {
+            font-family: Georgia;
+            background: linear-gradient(135deg, #89CFF0, #A7E6FF, #D3F4FF);
+            background-size: 400% 400%;
+            animation: gradientMove 4s ease infinite;
+            margin: 0;
+            padding: 0;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .form-box {
+            width: 500px;
+            background: white;
+            padding: 25px;
+            margin: 50px auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            animation: fadeIn 1s ease;
+            transition: 0.3s ease;
+        }
+
+        .form-box:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .input-container {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .input-container .icon {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            color: gray;
+        }
+
+        .input-container input,
+        .input-container textarea {
+            width: 100%;
+            padding: 10px 10px 10px 35px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            transition: 0.3s;
+            font-family: Georgia;
+        }
+
+        .input-container input:focus,
+        .input-container textarea:focus {
+            border-color: #22a6b3;
+            box-shadow: 0 0 8px rgba(34, 166, 179, 0.5);
+            outline: none;
+        }
+
+        button {
+            background: #22a6b3;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #1e8e99;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+    </style> 
+</head>
+
+<body>
+    <div class="form-box">
+        <h2 style="text-align:center; margin-bottom: 20px;">Fill in your information</h2>
+
+        <form action="ProfileServlet" method="POST">
+
+            <div class="input-container">
+                <i class="fa fa-user icon"></i>
+                <input type="text" name="name" placeholder="Name" required>
+            </div>
+
+            <div class="input-container">
+                <i class="fa fa-id-card icon"></i>
+                <input type="text" name="studentId" placeholder="Student ID" required>
+            </div>
+
+            <div class="input-container">
+                <i class="fa fa-book icon"></i>
+                <input type="text" name="programme" placeholder="Programme" required>
+            </div>
+
+            <div class="input-container">
+                <i class="fa fa-envelope icon"></i>
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+
+            <div class="input-container">
+                <i class="fa fa-heart icon"></i>
+                <input type="text" name="hobby" placeholder="Hobby" required>
+            </div>
+
+            <div class="input-container">
+                <i class="fa fa-comment-dots icon"></i>
+                <textarea name="intro" rows="4" placeholder="Self Introduction"></textarea>
+            </div>
+
+            <button type="submit">Submit</button>
+
+        </form>
+    </div>
+</body>
+</html>
